@@ -21,21 +21,12 @@ margin-left:0px;
 
 }
 
-.h3, h3 {
-font-size:1.25em;
-margin-right: 25px;
-
-}
-.h4, h4 {
-font-size:1.15em;
-
-}
 
 html {
     font-family: sans-serif;
 }
 body{
-  background: #e9ecf3;
+ /* background: #e9ecf3;*/
   background-repeat: repeat;
   color:#222222;
   
@@ -50,7 +41,39 @@ a{
   color:#0362fd;
 }
 
-
+.btn-primary {
+    background-color: #28a745;
+    background-image: linear-gradient(-180deg,#34d058,#28a745 50%);
+    color: #fff;
+}
+.btn-sm {
+    font-size: 12px;
+    line-height: 20px;
+    padding: 3px 10px;
+}
+.btnn {
+    -moz-appearance: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-appearance: none;
+    -webkit-user-select: none;
+    appearance: none;
+    background-position: -1px -1px;
+    background-repeat: repeat-x;
+    background-size: 110% 110%;
+    border: 1px solid rgba(27,31,35,.2);
+    border-radius: .25em;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 6px 12px;
+    position: relative;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+}
 
 .fixed{
   position: fixed;
@@ -304,8 +327,8 @@ ul.social > li a:hover{
 .content{
 }
 .section {
-    padding-bottom: 60px ;
-    padding-top: 60px ;
+   /* padding-bottom: 60px ;
+    padding-top: 60px ;*/
 }
 .section-container{
     padding: 30px;  
@@ -314,22 +337,37 @@ ul.social > li a:hover{
 -------------------------------------------------- */
 .intro{
   text-align: center;
-  padding-top: 100px;
+  padding-top: 50px;
 }
-.intro h2{
-  font-weight: bold;
-  line-height: 60px;
+.section h2{
+    color: #317eac;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.1;
  
 }
-.intro h3{
-  font-size: 1.5em;
-  line-height: 40px;
-  font-weight: normal;
+.section h3{
   padding-left: 15px;
+    color: #317eac;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.1;
 }
-.intro hr{ 
+
+.section h4{
+
+    color: #317eac;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.1;
+}
+.section hr{
   border: 0;
-  height: 1px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    border-top: 1px solid #eee;
+ /* height: 1px;*/
   background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
   background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
   background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
