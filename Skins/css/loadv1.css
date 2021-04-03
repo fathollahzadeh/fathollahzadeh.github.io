@@ -126,8 +126,8 @@ iframe {
     line-height: 30px;
     margin-top: 30px;
     font-family: BebasNeueRegular ;
-    font-size: 30px;
-    color:#e53e49;
+    font-size: 25px;
+    /*color:#e53e49;*/
 }
 
 .header-logo .logo h2 span {
