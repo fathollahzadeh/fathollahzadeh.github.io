@@ -78,4 +78,8 @@ table td {
   color: #ddd;
 }
 
+li {
+  margin-top: 10px;
+}
+
 #photo a, #photo a:visited, #photo a:active, #photo a:hover { color: #ddd; }
