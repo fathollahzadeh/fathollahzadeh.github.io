@@ -7,7 +7,7 @@ Bluer version: #2a5a9a
 */
 
 *{margin:0; padding:0;}
-body {background:#fff url(background.jpg) top center no-repeat; color:#303030; font:14px Roboto,Arial,Helvetica,sans-serif; line-height:1.6em;}
+body {background:#fff url(background.jpg) top center no-repeat; color:#303030; font:16px Roboto,Arial,Helvetica,sans-serif; line-height:1.6em;}
 a {color:#28f; text-decoration:none;}
 a:hover {text-decoration:underline;}
 a.disabled {color:#888; text-decoration:none;}
