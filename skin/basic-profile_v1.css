@@ -137,7 +137,7 @@ h3 {
 }
 
 #sidebar li a {
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 #sidebar h2 {
@@ -275,5 +275,5 @@ b {
 u {
   text-decoration: none;
   font-weight: 400;
-  /* color: #800000; */
+  color: #28f;
 }
