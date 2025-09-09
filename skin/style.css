@@ -563,6 +563,10 @@ table tr:hover {
     padding: 6px 9px;
     font-size: 0.8rem !important;
   }
+   .contact-links span {
+    padding: 6px 9px;
+    font-size: 0.8rem !important;
+  }
 }
 
 /* Responsive design - Desktop */
