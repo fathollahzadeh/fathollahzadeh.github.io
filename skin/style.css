@@ -1,0 +1,765 @@
+/* CSS Custom Properties for Light/Dark Theme */
+:root {
+  --bg-primary: white;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #333;
+  --text-secondary: #444;
+  --text-heading: #1e293b;
+  --accent-primary: #1e40af;
+  --accent-secondary: #2563eb;
+  --border-light: #e2e8f0;
+  --shadow-light: rgba(0,0,0,0.1);
+  --gradient-primary: linear-gradient(135deg, #0f172a 0%, #1e40af 50%, #3b82f6 100%);
+  --nav-bg: #f1f5f9;
+  --nav-text: #475569;
+  --nav-hover-bg: #1e40af;
+  --nav-hover-text: white;
+  --nav-bar-inactive: linear-gradient(180deg, #e2e8f0 0%, #f1f5f9 100%);
+  --nav-bar-active: linear-gradient(180deg, #0f172a 0%, #1e40af 100%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --text-primary: #e2e8f0;
+    --text-secondary: #cbd5e1;
+    --text-heading: #f1f5f9;
+    --accent-primary: #3b82f6;
+    --accent-secondary: #60a5fa;
+    --border-light: #475569;
+    --shadow-light: rgba(0,0,0,0.3);
+    --gradient-primary: linear-gradient(135deg, #1e293b 0%, #3b82f6 50%, #60a5fa 100%);
+    --nav-bg: #334155;
+    --nav-text: #cbd5e1;
+    --nav-hover-bg: #3b82f6;
+    --nav-hover-text: white;
+    --nav-bar-inactive: linear-gradient(180deg, #475569 0%, #64748b 100%);
+    --nav-bar-active: linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%);
+  }
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  font-size: 17px;
+  min-height: 100vh;
+}
+
+/* Container and layout */
+#wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  display: block;
+  position: relative;
+  background: var(--bg-primary);
+}
+
+/* Header section with photo */
+.header-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  gap: 40px;
+  /* padding: 40px; */
+  padding: 0px 0px 0px 40px;
+  /* background: var(--gradient-primary); */
+  /* border-radius: 24px; */
+  margin-bottom: 40px;
+  /* box-shadow: 0 20px 40px rgba(30, 45, 111, 0.4); */
+  position: relative;
+  overflow: hidden;
+  border-bottom: solid;
+  border-width: 1px;
+  border-bottom-color: rgb(226, 224, 224);
+}
+
+.header-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  pointer-events: none;
+}
+
+.profile-photo {
+  width: 160px;
+  height: 160px;
+  /* border-radius: 50%; */
+  object-fit: cover;
+  /* border: 4px solid rgba(255,255,255,0.8); */
+  /* box-shadow: 0 15px 50px rgba(0,0,0,0.4); */
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.profile-info h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #888;
+  margin-bottom: 12px;
+  letter-spacing: -0.8px;
+  /* text-shadow: 0 2px 20px rgba(0,0,0,0.3); */
+  position: relative;
+  z-index: 2;
+  border-bottom: 4px solid transparent;
+  /* border-image: linear-gradient(90deg, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.75) 100%) 1; */
+  padding-bottom: 8px;
+}
+
+
+
+.profile-info .title {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 25px;
+  font-weight: 500;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 2;
+}
+
+.profile-info {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+/* Prevent contact links from wrapping on tablet/desktop */
+@media (min-width: 400px) and (max-width: 830px) {
+  .contact-links a {
+    padding: 6px 9px !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 1023px) {
+  .contact-links {
+    gap: 4px;
+  }
+  
+  .contact-links a {
+    padding: 7px 10px;
+    font-size: 0.9rem;
+  }
+}
+
+.contact-links a {
+  color: #1f2937;
+  padding-bottom: 5px;
+  /* text-decoration: none !important; */
+  /* padding: 9px 16px; */
+  /* border-radius: 30px; */
+  /* background: linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(248,250,252,0.95) 100%); */
+  border: none;
+  /* transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); */
+  font-weight: 600;
+  /* box-shadow: 0 8px 25px rgba(0,0,0,0.15); */
+  /* backdrop-filter: blur(10px); */
+  position: relative;
+  z-index: 2;
+  font-size: 1.1em;
+}
+
+/* .contact-links a:hover {
+  background: linear-gradient(135deg, #94a3b8 0%, #cbd5e1 100%); 
+  color: white; 
+  text-decoration: none !important;
+  box-shadow: 0 8px 25px rgba(203, 213, 225, 0.3);
+  transform: translateY(-2px);
+} */
+
+/* Main content area */
+#content {
+  margin-left: 0;
+  padding: 0;
+  line-height: 1.7;
+}
+
+/* Adjust content when sidebar is present */
+@media (min-width: 768px) {
+  #content {
+    margin-right: 300px;
+    margin-left: 40px;
+  }
+}
+
+/* Sidebar navigation */
+#sidebar {
+  float: right;
+  width: 260px;
+  padding-left: 30px;
+  border-left: none;
+  margin-bottom: 30px;
+}
+
+#sidebar #photo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#sidebar #photo img,
+.sidebar-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid #f0f0f0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  object-fit: cover;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+#sidebar ul li {
+  margin-bottom: 15px;
+  padding: 0;
+}
+
+#sidebar ul li a {
+  display: block;
+  padding: 12px 20px;
+  background-color: #f8f9fa;
+  color: #2c3e50;
+  text-decoration: none !important;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+#sidebar ul li a:hover {
+  background-color: #3498db;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+  text-decoration: none !important;
+}
+
+/* Override any global underline rules for sidebar links */
+#sidebar ul li a,
+#sidebar ul li a:hover,
+#sidebar ul li a:visited,
+#sidebar ul li a:active {
+  text-decoration: none !important;
+}
+
+/* More specific override for navigation links */
+aside#sidebar nav.nav-menu a,
+aside#sidebar nav.nav-menu a:hover,
+aside#sidebar nav.nav-menu a:visited,
+aside#sidebar nav.nav-menu a:active {
+  text-decoration: none !important;
+}
+
+/* Navigation menu spacing fix */
+.nav-menu a {
+  margin-bottom: 5px !important;
+  display: inline-block !important;
+}
+
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.nav-menu a {
+  display: block;
+  padding: 2px 20px;
+  background-color: transparent;
+  color: var(--text-secondary);
+  text-decoration: none !important;
+  border-radius: 0;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: none;
+  margin-bottom: 0;
+  margin-left: 15px;
+  position: relative;
+  border-left: solid;
+  border-left-color: rgb(226, 224, 224);
+}
+
+ /* .nav-menu a:hover, .nav-menu a.active {
+  background-color: transparent;
+  color: var(--accent-primary);
+  transform: translateX(3px);
+  box-shadow: none;
+  text-decoration: none !important;
+  font-weight: 600;
+}
+
+
+.nav-menu a:before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--nav-bar-inactive);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 2px;
+}
+
+.nav-menu a:hover:before, .nav-menu a.active:before {
+  background: var(--nav-bar-active);
+  width: 4px;
+  box-shadow: 0 0 15px rgba(30, 64, 175, 0.5);
+}  */
+
+/* Typography */
+h1 {
+  font-size: 2.0rem;
+  color: var(--text-heading);
+  margin: 40px 0 20px 0;
+  font-weight: 800;
+  border-bottom: 4px solid var(--border-light);
+  padding-bottom: 12px;
+  position: relative;
+}
+
+
+#content h1::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--accent-primary);
+  border-radius: 2px;
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: var(--text-heading);
+  margin: 35px 0 20px 0;
+  font-weight: 700;
+  border-bottom: 3px solid var(--border-light);
+  padding-bottom: 10px;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--accent-primary);
+  border-radius: 2px;
+}
+
+/* Fix heading anchor links to look like headings, not links */
+h1 a[name], h2 a[name], h3 a[name] {
+  color: inherit !important;
+  text-decoration: none !important;
+  font-weight: inherit;
+}
+
+h1 a[name]:hover, h2 a[name]:hover, h3 a[name]:hover {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+h1 a[name]:hover::after, h2 a[name]:hover::after, h3 a[name]:hover::after {
+  display: none !important;
+}
+
+/* Remove underline from sidebar photo link */
+#sidebar #photo a:hover::after {
+  display: none !important;
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: var(--text-heading);
+  margin: 25px 0 15px 0;
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 20px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* Links */
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+a:hover {
+  color: var(--accent-secondary);
+  text-decoration: none;
+}
+
+a:not(.contact-links a):not(.nav-menu a):hover {
+  text-decoration: underline;
+}
+
+
+/* Lists - Publications, Students, etc. */
+ul {
+  margin-bottom: 25px;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 2px;
+  padding-left: 0;
+  line-height: 1.6;
+}
+
+/* Publication list styling */
+.publications li {
+  padding: 15px;
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border-left: 4px solid var(--accent-primary);
+  transition: all 0.3s ease;
+}
+
+.publications li:hover {
+  background-color: #e8f4f8;
+  transform: translateX(5px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Student list styling */
+.students li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--bg-secondary);
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+/* Teaching courses */
+.courses li {
+  padding: 12px;
+  background-color: var(--bg-secondary);
+  border-radius: 6px;
+  margin-bottom: 10px;
+  border-left: 3px solid #27ae60;
+}
+
+/* Awards section */
+.awards li {
+  padding: 10px;
+  background-color: #fff8e1;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  border-left: 3px solid #f39c12;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: var(--bg-primary);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px var(--shadow-light);
+}
+
+table th {
+  background-color: #34495e;
+  color: white;
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+}
+
+table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+table tr:hover {
+  background-color: var(--bg-secondary);
+}
+
+/* Responsive design - Mobile first adjustments */
+@media (max-width: 767px) {
+  .header-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 0;
+    padding: 19px 15px 19px 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.2);
+  }
+  
+  .profile-photo {
+    width: 150px;
+    height: 150px;
+    order: 1;
+    margin-bottom: 0;
+  }
+  
+  .profile-info {
+    order: 2;
+  }
+  
+  .profile-info h1 {
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 4px;
+  }
+  
+  .profile-info .title {
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+  }
+  
+  .contact-links {
+    justify-content: center;
+    gap: 4px;
+  }
+  
+  .contact-links a {
+    padding: 6px 9px;
+    font-size: 0.7rem !important;
+  }
+}
+
+/* Responsive design - Desktop */
+@media (min-width: 1024px) {
+  #content {
+    margin-right: 300px;
+  }
+  
+  #sidebar {
+    width: 270px;
+    position: sticky;
+    top: 20px;
+    margin-bottom: 0;
+  }
+  
+  .profile-photo {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .profile-info h1 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+  .profile-info h1 {
+    font-size: 2.0rem;
+  }
+  
+  .profile-photo {
+    width: 220px;
+    height: 240px;
+  }
+}
+
+/* Print styles */
+@media print {
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  a, a:visited {
+    text-decoration: underline;
+  }
+  
+  .nav-menu {
+    display: none;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Footer styling for all screen sizes */
+.credits {
+  padding: 0 20px !important;
+  text-align: center !important;
+  margin: 30px 0 !important;
+}
+
+
+/* Mobile responsive adjustments */
+@media (max-width: 767px) {
+  #wrap {
+    padding: 10px;
+  }
+  
+  #sidebar {
+    float: none;
+    width: 100%;
+    padding-left: 0;
+    border-left: none;
+    border-top: none;
+    padding-top: 0;
+    margin-bottom: 0;
+  }
+  
+  #wrap {
+    padding: 10px;
+  }
+  
+  #content {
+    margin-right: 0;
+  }
+  
+  #sidebar #photo {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  #sidebar #photo img,
+  .sidebar-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* Make navigation horizontal on mobile */
+  .nav-menu {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    gap: 6px !important;
+    justify-content: center;
+    padding: 8px 5px 15px 5px !important;
+    margin-bottom: 0;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  
+  /* Hide Home link on mobile since we're already on the page */
+  .nav-menu .home-link {
+    display: none !important;
+  }
+  
+  .nav-menu a {
+    padding: 8px 12px;
+    font-size: 0.7rem;
+    margin-bottom: 0;
+    flex: 0 1 auto;
+    min-width: 0;
+    border-radius: 12px !important;
+    background-color: var(--nav-bg) !important;
+    border: none !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-shadow: 0 2px 6px var(--shadow-light) !important;
+    color: var(--nav-text) !important;
+  }
+  
+  .nav-menu a:hover {
+    background-color: var(--nav-hover-bg) !important;
+    color: var(--nav-hover-text) !important;
+    border: none !important;
+    transform: none !important;
+  }
+  
+  #sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding-left: 0;
+  }
+  
+  #sidebar ul li {
+    margin-bottom: 0;
+  }
+  
+  #sidebar ul li a {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.2rem;
+  }
+  
+  /* Fix footer padding on mobile */
+  .credits {
+    padding: 0 15px !important;
+    text-align: center !important;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .nav-menu {
+    gap: 4px !important;
+    padding: 10px 3px 6px 3px !important;
+  }
+  
+  .nav-menu a {
+    padding: 6px 8px !important;
+    font-size: 0.65rem !important;
+    flex: 1 1 0px;
+    min-width: 0;
+    text-align: center;
+  }
+}
+
+li {
+  margin-top: 13px;
+}
