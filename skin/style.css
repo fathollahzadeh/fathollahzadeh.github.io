@@ -97,10 +97,11 @@ body {
 }
 
 .profile-photo {
-  width: 160px;
-  height: 160px;
+  width: 240px;
+  height: 240px;
   /* border-radius: 50%; */
   object-fit: cover;
+  object-position: top center;
   /* border: 4px solid rgba(255,255,255,0.8); */
   /* box-shadow: 0 15px 50px rgba(0,0,0,0.4); */
   flex-shrink: 0;
@@ -109,9 +110,10 @@ body {
 }
 
 .profile-info h1 {
-  font-size: 2rem;
+  font-size: 1.4rem;
   font-weight: 500;
-  color: #888;
+  color: var(--text-heading);
+  margin-top: 0;
   margin-bottom: 12px;
   letter-spacing: -0.8px;
   /* text-shadow: 0 2px 20px rgba(0,0,0,0.3); */
@@ -142,7 +144,7 @@ body {
 
 .contact-links {
   display: flex;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
   gap: 8px;
   justify-content: flex-start;
 }
@@ -385,21 +387,6 @@ h2::after {
   border-radius: 2px;
 }
 
-/* Fix heading anchor links to look like headings, not links */
-h1 a[name], h2 a[name], h3 a[name] {
-  color: inherit !important;
-  text-decoration: none !important;
-  font-weight: inherit;
-}
-
-h1 a[name]:hover, h2 a[name]:hover, h3 a[name]:hover {
-  color: inherit !important;
-  text-decoration: none !important;
-}
-
-h1 a[name]:hover::after, h2 a[name]:hover::after, h3 a[name]:hover::after {
-  display: none !important;
-}
 
 /* Remove underline from sidebar photo link */
 #sidebar #photo a:hover::after {
@@ -533,8 +520,8 @@ table tr:hover {
   }
   
   .profile-photo {
-    width: 170px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
     order: 1;
     margin-bottom: 0;
   }
@@ -544,7 +531,7 @@ table tr:hover {
   }
   
   .profile-info h1 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-top: 0;
     margin-bottom: 4px;
   }
@@ -583,24 +570,21 @@ table tr:hover {
   }
   
   .profile-photo {
-    width: 250px;
-    height: 250px;
+    width: 240px;
+    height: 240px;
   }
-  
-  .profile-info h1 {
-    font-size: 1.6rem;
-  }
+
 }
 
 /* Large desktop */
 @media (min-width: 1200px) {
   .profile-info h1 {
-    font-size: 2.0rem;
+    font-size: 1.4rem;
   }
-  
+
   .profile-photo {
-    width: 220px;
-    height: 240px;
+    width: 260px;
+    height: 260px;
   }
 }
 
